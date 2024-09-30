@@ -6,7 +6,6 @@ public class Account {
     private double annualInterestRate;
     private Date dateCreated;
 
-    // Безаргументный конструктор
     public Account() {
         id = 0;
         balance = 0;
@@ -14,7 +13,6 @@ public class Account {
         dateCreated = new Date();
     }
 
-    // Конструктор с id и balance
     public Account(int id, double balance) {
         this.id = id;
         this.balance = balance;
