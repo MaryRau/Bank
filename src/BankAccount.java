@@ -19,6 +19,7 @@ public class BankAccount {
             System.out.println("Снято: " + amount + " рублей");
             System.out.println("Новый баланс: " + balance + " рублей");
         }
+
         else {
             System.out.println("Недостаточно средств. Снятие не выполнено.");
         }
