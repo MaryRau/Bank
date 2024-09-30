@@ -1,18 +1,30 @@
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
 public class Account {
     private int id;
     private double balance;
-    private double annualInterestRate;
+    private double annualRate;
     private Date dateCreated;
 
     // Конструктор с id, balance и annualInterestRate
     public Account(int id, double balance, double annualInterestRate) {
         this.id = id;
         this.balance = balance;
-        this.annualInterestRate = annualInterestRate;
+        this.annualRate = annualInterestRate;
         dateCreated = new Date();
+    }
+
+    public Account()
+    {
+        id = 0;
+        balance = 0;
+        annualRate = 6.5;
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2001, 01, 01);
+        calendar.set(Calendar.MILLISECOND, 0);
+        dateCreated = calendar.getTime();
     }
 
     public int getId() {
@@ -31,12 +43,12 @@ public class Account {
         this.balance = balance;
     }
 
-    public double getAnnualInterestRate() {
-        return annualInterestRate;
+    public double getAnnualRate() {
+        return annualRate;
     }
 
-    public void setAnnualInterestRate(double annualInterestRate) {
-        this.annualInterestRate = annualInterestRate;
+    public void setAnnualRate(double annualInterestRate) {
+        this.annualRate = annualInterestRate;
     }
 
     public Date getDateCreated() {
@@ -45,7 +57,7 @@ public class Account {
 
     // Метод для получения ежемесячного процента
     public double getMonthlyInterest() {
-        return balance * (annualInterestRate / 100) / 12;
+        return balance * (annualRate / 100) / 12;
     }
 
     public void withdraw(double amount) {
