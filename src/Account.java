@@ -7,10 +7,11 @@ public class Account {
     private double annualInterestRate;
     private Date dateCreated;
 
-    public Account(int id, double balance) {
+    // Конструктор с id, balance и annualInterestRate
+    public Account(int id, double balance, double annualInterestRate) {
         this.id = id;
         this.balance = balance;
-        annualInterestRate = 0;
+        this.annualInterestRate = annualInterestRate;
         dateCreated = new Date();
     }
 
@@ -42,6 +43,11 @@ public class Account {
         return dateCreated;
     }
 
+    // Метод для получения ежемесячного процента
+    public double getMonthlyInterest() {
+        return balance * (annualInterestRate / 100) / 12;
+    }
+
     public void withdraw(double amount) {
         if (balance >= amount) {
             balance -= amount;
@@ -55,14 +61,14 @@ public class Account {
     }
 }
 
-class Main {
+class BankingApp {
     public static void main(String[] args) {
+        boolean isExit = false;
         Scanner scanner = new Scanner(System.in);
         Account[] accounts = new Account[10];
-        boolean isExit = false;
 
         for (int i = 0; i < accounts.length; i++) {
-            accounts[i] = new Account(i, 10000.0);
+            accounts[i] = new Account(i, 10000.0, 4.5);
         }
 
         while (!isExit) {
