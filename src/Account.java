@@ -71,7 +71,7 @@ public class Account {
     }
 }
 
-class BankingApp {
+class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Account[] accounts = new Account[10];
