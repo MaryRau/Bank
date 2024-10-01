@@ -8,7 +8,6 @@ public class Account {
     private double annualRate;
     private Date dateCreated;
 
-    // Конструктор с id, balance и annualInterestRate
     public Account(int id, double balance, double annualInterestRate) {
         this.id = id;
         this.balance = balance;
@@ -55,7 +54,6 @@ public class Account {
         return dateCreated;
     }
 
-    // Метод для получения ежемесячного процента
     public double getMonthlyInterest() {
         return balance * (annualRate / 100) / 12;
     }
