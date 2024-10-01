@@ -73,7 +73,6 @@ public class Account {
 
 class BankingApp {
     public static void main(String[] args) {
-        boolean isExit = false;
         Scanner scanner = new Scanner(System.in);
         Account[] accounts = new Account[10];
 
@@ -81,7 +80,7 @@ class BankingApp {
             accounts[i] = new Account(i, 10000.0, 4.5);
         }
 
-        while (!isExit) {
+        while (true) {
             System.out.print("Введите ID: ");
             int id = scanner.nextInt();
 
@@ -125,7 +124,7 @@ class BankingApp {
                         System.out.println("Внесено: " + depositAmount + " руб.");
                         break;
                     case 4:
-                        isExit = true;
+                        System.out.println("Выход из меню.");
                         break;
                     default:
                         System.out.println("Некорректный выбор. Попробуйте еще раз.");
